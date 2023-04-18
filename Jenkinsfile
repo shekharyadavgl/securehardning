@@ -3,19 +3,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-             script{
-//             git branch: 'Your Branch name', credentialsId: 'Your crendiatails', url: ' Your BitBucket Repo URL '
-
-// ##To read file from workspace which will contain the Jenkins Job Name ###
-           
+             script{         
      def filePath = readFile "${WORKSPACE}/test.json"                   
 
-// ##To read file line by line ###
- 
      def lines = filePath.readLines() 
-      
-// ##To iterate and run Jenkins Jobs one by one ####
-
                     for (line in lines) {                                            
                       build(job: "$line/branchName",
                         parameters:
