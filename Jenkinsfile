@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
              script{         
+                 console.log('ddfdf')
                    }  
                   }
         }
