@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-             script{         
-                 console.log('ddfdf')
-                   }  
+echo 'hello'
                   }
         }
     }
