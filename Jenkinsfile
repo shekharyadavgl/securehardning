@@ -47,6 +47,8 @@ pipeline {
 //         buildDiscarder(logRotator(daysToKeepStr: "30"))
 //         timeout(time: 10, unit: "MINUTES")
 //     }
+stages {
+
     stage("Code Scan") {
         steps {
         echo "Hello world"
@@ -57,4 +59,5 @@ pipeline {
 //             )
         }
      }
+}
 }
