@@ -43,11 +43,11 @@ pipeline {
 //         }
 //     }
 
-//     options {
-//         disableConcurrentBuilds()
-//         buildDiscarder(logRotator(daysToKeepStr: "30"))
-//         timeout(time: 10, unit: "MINUTES")
-//     }
+    options {
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(daysToKeepStr: "30"))
+        timeout(time: 10, unit: "MINUTES")
+    }
 stages {
 
     stage("Code Scan") {
