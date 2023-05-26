@@ -52,7 +52,7 @@ stages {
 
     stage("Code Scan") {
         steps {
-        echo "${BUILD_LABEL}"
+        echo BUILD_LABEL
 //             doCodeScan(
 //                 repo: REPO_ID,                                 // OPTIONAL: The gitHub repo name, if not supplied, then it is derived from Git URL
 //                 slackChannel: SLACK_CHANNEL,                   // OPTIONAL: The slack channel where the messages should be sent if violations are found
