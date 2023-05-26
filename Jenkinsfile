@@ -30,18 +30,18 @@ def GITHUB_REPO = "security-release-review-automation"
 def SLACK_CHANNEL = "#security-hardening-application-developer"
 
 pipeline {
-     agent any
-//     agent {
-//         kubernetes {
-//             label "${BUILD_LABEL}"
-//             yaml pod(
-//                 ContainerTemplates.dockerBuildContainers() + [
-//                     ContainerTemplates.maven([:], "3.6-jdk-11"),
-//                     securityToolboxContainer()
-//                 ]
-//             )
-//         }
-//     }
+//      agent any
+    agent {
+        kubernetes {
+            label "${BUILD_LABEL}"
+            yaml pod(
+                ContainerTemplates.dockerBuildContainers() + [
+                    ContainerTemplates.maven([:], "3.6-jdk-11"),
+                    securityToolboxContainer()
+                ]
+            )
+        }
+    }
 
     options {
         disableConcurrentBuilds()
